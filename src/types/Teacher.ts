@@ -1,4 +1,4 @@
-import { Turmas } from "./Turmas";
+import { Turma } from "./Turmas";
 
 export interface Teacher {
   nome_professor: string;
@@ -25,7 +25,7 @@ export interface Alocacao {
   ativa: boolean;
   data_final: string | null;
   data_inicio: string;
-  turmas: Turmas;
+  turmas: Turma;
 
 }
 
