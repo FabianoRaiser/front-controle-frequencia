@@ -4,7 +4,7 @@ import TurmasFilter from 'components/TurmasFilter'
 import TurmasTools from 'components/TurmasTools'
 
 
-function OrdersPage() {
+function TurmasPage() {
   return (
     <>
       <Box sx={{display: "flex", justifyContent: 'space-between', alignItems: 'center'}}>
@@ -17,4 +17,4 @@ function OrdersPage() {
   )
 }
 
-export default OrdersPage
+export default TurmasPage
