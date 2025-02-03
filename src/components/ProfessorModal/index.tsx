@@ -70,6 +70,8 @@ function CustomTabPanel(props: TabPanelProps) {
   );
 }
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function ProfessorModal({
   open,
   handleClose,
@@ -78,7 +80,7 @@ export default function ProfessorModal({
   //mudar para a requisição da api
   const [professorData, setProfessorData] = useState<TeacherComplete | null >(null); 
   const [valueTab, setValueTab] = useState(0);
-  const url = `http://192.168.3.3:3000/api/professores/${teacherId}`;
+  const url = `${apiUrl}/professores/${teacherId}`;
 
   const handleChangeTab = (_event: SyntheticEvent, newValue: number) => {
     setValueTab(newValue);

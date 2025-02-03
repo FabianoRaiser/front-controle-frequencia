@@ -6,6 +6,7 @@ import Layout from './layouts/dashboard.tsx'
 import TurmasPage from './pages/turmas.tsx'
 import { RouterProvider } from 'react-router'
 import ProfessoresPage from './pages/index.tsx'
+import FormacoesPage from 'pages/formacoes.tsx'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
           {
             path: 'turmas',
             Component: TurmasPage,
+          },
+          {
+            path: 'formacoes',
+            Component: FormacoesPage,
           }
         ],
       }

@@ -1,7 +1,7 @@
 
 import { AppProvider, type Navigation } from '@toolpad/core'
 import { Outlet } from 'react-router'
-import { Groups, Person } from '@mui/icons-material'
+import { Groups, Person, School } from '@mui/icons-material'
 import eduLogo from './assets/img-edu.png';
 
 const NAVIGATION: Navigation = [
@@ -18,6 +18,11 @@ const NAVIGATION: Navigation = [
     segment: 'turmas',
     title: 'Turmas de Formação',
     icon: <Groups />
+  },
+  {
+    segment: 'formacoes',
+    title: 'Formações',
+    icon: <School />
   }
 ];
 
