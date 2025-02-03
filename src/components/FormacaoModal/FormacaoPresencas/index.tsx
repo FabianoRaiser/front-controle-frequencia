@@ -1,5 +1,6 @@
 import { Paper } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import dayjs from "dayjs";
 import { PresencasFormacao } from "types/Formacoes";
 
 interface FormacaoPresencasProps {
@@ -16,7 +17,7 @@ function setRows(list: PresencasFormacao[]) {
       numeroPresenca: index + 1,
       matricula: presenca.professores.matricula,
       nome: presenca.professores.nome_professor,
-      data: presenca.created_at,
+      data: dayjs(presenca.created_at).format('DD/MM/YYYY HH:mm:ss'),
     };
   });
 
@@ -45,8 +46,8 @@ export default function FormacaoPresencas({
     },
     {
       field: "data",
-      headerName: "Data",
-      width: 100,
+      headerName: "Data Registro",
+      width: 175,
     },
   ];
 
