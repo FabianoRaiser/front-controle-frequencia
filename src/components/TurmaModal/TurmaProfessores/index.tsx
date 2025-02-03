@@ -2,6 +2,7 @@ import { Check, Close } from "@mui/icons-material";
 import { Paper } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { Alocacao } from "types/Turmas";
+import { formatDate } from "utils/dates";
 
 interface TurmaProfessoresProps {
   listaProfessores: Alocacao[] | null;
@@ -17,8 +18,8 @@ function setRows(list: Alocacao[] | null) {
       matricula: alocacao.professores.matricula,
       nome: alocacao.professores.nome_professor,
       ativa: alocacao.ativa,
-      dataInicio: alocacao.data_inicio,
-      dataFinal: alocacao.data_final,
+      dataInicio: formatDate(alocacao.data_inicio),
+      dataFinal: formatDate(alocacao.data_final),
     };
   });
 

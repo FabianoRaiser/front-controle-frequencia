@@ -1,6 +1,7 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Presenca,} from "../../../types/Teacher"
 import { Paper } from "@mui/material";
+import { formatDate } from "utils/dates";
 
 
 interface ProfessorPresencasProps {
@@ -15,7 +16,7 @@ function setRows(list: Presenca[] | null) {
       return {
         id: presenca.presenca_id,
         nomeFormacao: presenca.formacoes.nome_formacao,
-        date: presenca.formacoes.data,
+        date: formatDate(presenca.formacoes.data),
         turma: presenca.formacoes.turmas.nome_turma,
         etapa: presenca.formacoes.turmas.etapa,
         periodo: presenca.formacoes.periodo,

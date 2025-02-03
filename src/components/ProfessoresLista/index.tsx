@@ -10,6 +10,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Teacher } from "types/Teacher.ts";
 import ProfessorModal from "../ProfessorModal";
 import { fetchProfessores } from "api/ProfessorData";
+import { formatDate } from "utils/dates";
 
 const paginationModel = { page: 0, pageSize: 10 };
 
@@ -19,7 +20,7 @@ function setRows(list: Teacher[]) {
       id: professor.matricula,
       name: professor.nome_professor,
       ue: professor.unidade_ensino,
-      admissao: professor.data_admissao,
+      admissao: formatDate(professor.data_admissao),
       email: professor.email,
     };
   });

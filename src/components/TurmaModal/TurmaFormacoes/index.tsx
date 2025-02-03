@@ -1,6 +1,7 @@
 import { Paper } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Formacao } from "types/Turmas";
+import { formatDate } from "utils/dates";
 
 interface TurmaFormacoesProps {
   formacoes: Formacao[] | null;
@@ -14,7 +15,7 @@ function setRows(list: Formacao[] | null) {
     return {
       id: formacao.formacao_id,
       nome: formacao.nome_formacao,
-      data: formacao.data,
+      data: formatDate(formacao.data),
       cargaHoraria: formacao.carga_horaria,
     };
   });

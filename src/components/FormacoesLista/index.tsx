@@ -10,6 +10,7 @@ import { fetchFormacoes } from "api/FormacoesData";
 import FormacaoModal from "components/FormacaoModal";
 import { useCallback, useEffect, useState } from "react";
 import { Formacao } from "types/Formacoes";
+import { formatDate } from "utils/dates";
 
 export const FormacoesLista = () => {
   const [lista, setLista] = useState<Formacao[] | null | undefined>(null);
@@ -37,7 +38,7 @@ export const FormacoesLista = () => {
         id: formacao.formacao_id,
         nome: formacao.nome_formacao,
         cargaHoraria: formacao.carga_horaria,
-        data: formacao.data,
+        data: formatDate(formacao.data),
         local: formacao.local,
         modalidade: formacao.modalidade,
         periodo: formacao.periodo,

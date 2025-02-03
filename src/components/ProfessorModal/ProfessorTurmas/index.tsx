@@ -2,7 +2,8 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Check, Close } from "@mui/icons-material";
 import { Alocacao } from "../../../types/Teacher";
 import { GridRenderCellParams } from "@mui/x-data-grid";
-import { Paper } from "@mui/material";
+import { Box, Paper } from "@mui/material";
+import { formatDate } from "utils/dates";
 
 interface ProfessorTurmasProps {
   alocacoes: Alocacao[] | null;
@@ -16,8 +17,8 @@ function setRows(list: Alocacao[] | null) {
     return {
       id: alocacao.id,
       nomeTurma: alocacao.turmas.nome_turma,
-      date_inicio: alocacao.data_inicio,
-      date_final: alocacao.data_final,
+      date_inicio: formatDate(alocacao.data_inicio),
+      date_final: formatDate(alocacao.data_final),
       ativa: alocacao.ativa,
       etapa: alocacao.turmas.etapa,
     };
@@ -54,9 +55,29 @@ export default function ProfessorTurmas({ alocacoes }: ProfessorTurmasProps) {
       width: 150,
       renderCell: (params: GridRenderCellParams) => {
         if (params.value === true) {
-          return <Check />;
+          return (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <Check />
+            </Box>
+          );
         }
-        <Close />;
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+          }}
+        >
+          <Close />;
+        </Box>;
       },
     },
     {
